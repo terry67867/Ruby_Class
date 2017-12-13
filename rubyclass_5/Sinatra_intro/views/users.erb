@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>회원목록확인!</title>
+    <style>
+      input, textarea {margin-top: 10px;}
+    </style>
+  </head>
+  <body>
+    <h2>회원목록입니다.</h2>
+    <!-- index랑 같이 보여주기 :each_with_index -->
+    <!-- 역순으로 보여주기 : reverse -->
+    <% @users.reverse.each_with_index do |user, idx| %>
+    <%= @users.length - idx %> 번째 회원 <br />
+    이메일 : <%= user[0] %><br />
+    비밀번호 : <%= user[1] %>
+    <hr />
+    <% end %>
+    <a href="/"> 홈으로 가기</a>
+  </body>
+</html>
